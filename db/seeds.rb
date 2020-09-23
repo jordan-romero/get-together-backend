@@ -37,7 +37,7 @@ c6.events << e2
 c3.events << e3
 
 
-o1.events << e1 
+o1.events << [e1, e2] 
 
 o2.events << e3 
 
