@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_09_23_143727) do
     t.string "name"
     t.text "description"
     t.string "duration"
-    t.string "cost"
+    t.float "cost"
     t.text "location"
     t.integer "category_id", null: false
     t.integer "occasion_id", null: false

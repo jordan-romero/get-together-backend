@@ -3,6 +3,7 @@ class CreateOccasions < ActiveRecord::Migration[6.0]
     create_table :occasions do |t|
       t.date :date
       t.time :time
+      
 
       t.timestamps
     end

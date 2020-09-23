@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :name
       t.text :description
       t.string :duration
-      t.string :cost
+      t.float :cost
       t.text :location
       t.references :category, null: false, foreign_key: true
       t.references :occasion, null: false, foreign_key: true
