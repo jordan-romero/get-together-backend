@@ -1,14 +1,14 @@
 class Event < ApplicationRecord
-  belongs_to :occasion
+  belongs_to :category
   belongs_to :occasion
 
-  def occasion_name=(name)
-    occasion = occasion.find_by(name: name)
-    self.occasion = occasion 
+  def category_name=(name)
+    category = Category.find_by(name: name)
+    self.category = category 
   end 
 
-  def occasion_name
-    occasion.name 
+  def category_name
+    category.name 
   end 
 
   def occasion_name=(name)

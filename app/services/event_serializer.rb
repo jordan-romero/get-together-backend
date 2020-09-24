@@ -7,7 +7,7 @@ class EventSerializer
         @event.to_json(:except => [:created_at, :updated_at],
         :include => {
             :category => {:only => [:name]}, 
-            :occasion => {:only => [:date]} 
+            :occasion => {:only => [:name]} 
         })
     end 
 end 
