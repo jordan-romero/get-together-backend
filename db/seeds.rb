@@ -26,11 +26,11 @@ duration: "2-3 hours", cost: "0.00", location: "2100 Barton Springs Rd., Zilker 
 e3 = Event.create(name: "Kayaking", description: "Need to secure the rental first from Congress Ave. Kayaks, check for groupon.", 
 duration: "2 hours", cost: "38.00", location: "Waller Creek Boathouse: 74 Trinity Street, Austin, Texas 78701")
 
-o1 = Occasion.create(date: "2020-10-10", time: "15:43")
+o1 = Occasion.create(name: "Hot Date", date: "2020-10-10", time: "15:43")
 
-o2 = Occasion.create(date: "2020-10-15", time: "17:43")
+o2 = Occasion.create(name: "Shannon's Birthday", date: "2020-10-15", time: "17:43")
 
-o3 = Occasion.create(date: "2020-11-15", time: "16:43")
+o3 = Occasion.create(name: "Anniversary", date: "2020-11-15", time: "16:43")
 
 c4.events << e1 
 c6.events << e2 
