@@ -11,7 +11,12 @@ class EventsController < ApplicationController
         render json: EventSerializer.new(event).to_serialized_json
     end 
 
+    def destroy
+        event = Event.find_by(id: params[:id])
+        event.destroy
 
+        render json: {message: "Event successfully Deleted"}
+    end 
 
 
     private 
