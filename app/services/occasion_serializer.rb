@@ -4,6 +4,9 @@ class OccasionSerializer
     end 
 
     def to_serialized_json
-        @occasion.to_json(:except => [:created_at, :updated_at])
+        @occasion.to_json(:except => [:created_at, :updated_at],
+        :include => {
+            :events => {:only => [:name, :cost]}
+        })
     end 
 end 

@@ -5,3 +5,10 @@ class OccasionsController < ApplicationController
         render json: OccasionSerializer.new(occasions).to_serialized_json
     end 
 end
+
+
+private 
+
+def occasion_params 
+    params.permit(name, date, time, event_name)
+end 
