@@ -1,5 +1,6 @@
 class Occasion < ApplicationRecord
     has_many :events
+    
 
     def date_format
         date.strftime("%b %d, %Y")

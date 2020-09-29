@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :events
-  resources :occasions
-  resources :categories
+  resources :events, only: [:create, :update, :destroy, :index]
+  resources :occasions, only: [:create, :update, :destroy, :index]
+  resources :categories, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
