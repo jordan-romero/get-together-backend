@@ -16,8 +16,11 @@ class EventsController < ApplicationController
 
     def update 
         event = Event.find_by(id: params[:id])
-        event.update(event_params)
-        render json: EventSerializer.new(event).to_serialized_json
+        if event.update(event_params)
+            render json: EventSerializer.new(event).to_serialized_json
+        else 
+            render json: { errors: "Nope, bad data." }, status: 400
+        end 
     end 
 
     def destroy
