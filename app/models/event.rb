@@ -2,6 +2,9 @@ class Event < ApplicationRecord
   belongs_to :category
   belongs_to :occasion
 
+  validates :name, :description, :duration, :cost, :location, presence: true 
+
+
   def category_name=(name)
     category = Category.find_by(name: name)
     self.category = category 

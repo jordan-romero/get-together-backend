@@ -7,8 +7,11 @@ class EventsController < ApplicationController
 
     def create 
         event = Event.new(event_params)
-        event.save 
-        render json: EventSerializer.new(event).to_serialized_json
+        if event.save 
+            render json: EventSerializer.new(event).to_serialized_json
+        else 
+            render json: { errors: "Nope, bad data." }, status: 400
+        end 
     end 
 
     def update 
