@@ -1,5 +1,5 @@
 class Occasion < ApplicationRecord
-    has_many :events
+    has_many :events, dependent: :destroy 
     
     validates :name, :date, :time, presence: true 
 

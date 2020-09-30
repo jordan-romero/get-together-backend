@@ -23,6 +23,13 @@ class OccasionsController < ApplicationController
             render json: {errors: occasion.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end 
     end 
+
+    def destroy
+        occasion = Occasion.find_by(id: params[:id])
+        occasion.destroy
+
+        render json: {message: "Event successfully Deleted"}
+    end 
 end
 
 
