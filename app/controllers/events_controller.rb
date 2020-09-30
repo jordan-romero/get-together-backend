@@ -10,7 +10,7 @@ class EventsController < ApplicationController
         if event.save 
             render json: EventSerializer.new(event).to_serialized_json
         else 
-            render json: { errors: "Nope, bad data." }, status: 400
+            render json: {errors: event.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end 
     end 
 
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
         if event.update(event_params)
             render json: EventSerializer.new(event).to_serialized_json
         else 
-            render json: { errors: "Nope, bad data." }, status: 400
+            render json: {errors: event.errors.full_messages.to_sentence}, status: :unprocessable_entity
         end 
     end 
 
