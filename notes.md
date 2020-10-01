@@ -1,5 +1,5 @@
-[] - create categories backend 
-[] - handle validations
+[X] - create categories backend 
+[X] - handle validations
     [X] - event
     [X] - occasions
 [] - API for business locations - YELP 
