@@ -4,6 +4,9 @@ class CategorySerializer
     end 
 
     def to_serialized_json
-        @category.to_json(:except => [:created_at, :updated_at])
+        @category.to_json(:except => [:created_at, :updated_at],
+        :include => {
+            :events => {:only => [:name]}
+    })
     end 
 end 
