@@ -4,3 +4,6 @@
     [X] - occasions
 [] - API for business locations - YELP 
 [X] - clean up routes
+[] - search
+[] - filter
+[] - sort 
