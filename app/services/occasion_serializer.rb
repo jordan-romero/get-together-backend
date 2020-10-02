@@ -6,7 +6,7 @@ class OccasionSerializer
     def to_serialized_json
         @occasion.to_json(:only => [:name, :date, :time, :id], :methods => [:date_format, :time_format],
         :include => {
-            :events => {:only => [:name, :cost]}
+            :events => {:only => [:name, :cost, :description, :duration, :location]}
         })
     end 
 end 

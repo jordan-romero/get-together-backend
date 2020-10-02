@@ -5,7 +5,7 @@ class EventsController < ApplicationController
         render json: EventSerializer.new(events).to_serialized_json 
     end 
 
-    def create 
+    def create
         event = Event.new(event_params)
         if event.save 
             render json: EventSerializer.new(event).to_serialized_json
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     private 
 
     def event_params
-        params.permit(:name, :description, :location, :duration, :cost, :category_name, :occasion_name)
+        params.permit(:name, :description, :location, :duration, :cost, :category_name, :occasion_name, :occasion_id)
     end 
 end
 
