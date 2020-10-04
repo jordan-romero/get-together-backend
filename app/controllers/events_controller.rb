@@ -1,7 +1,17 @@
 class EventsController < ApplicationController
 
     def index 
-        events = Event.all 
+        if params['filter'].present? 
+            params['filter'] == 'all' ? filtered_events = Event.all : filtered_items = Event.where(category: params['filter'])
+            sorted_events = Event.sort(filtered_events, params['sort'])
+            if params['query'].present? 
+                events = sorted_events.where("name Like ?", "%#{params[:query]}%")
+            else 
+                events = sorted_events
+            end 
+        else 
+            events = Event.all 
+        end 
         render json: EventSerializer.new(events).to_serialized_json 
     end 
 
