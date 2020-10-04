@@ -16,6 +16,7 @@ class EventsController < ApplicationController
     end 
 
     def create
+        # byebug
         event = Event.new(event_params)
         if event.save 
             render json: EventSerializer.new(event).to_serialized_json

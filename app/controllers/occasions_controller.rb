@@ -6,7 +6,6 @@ class OccasionsController < ApplicationController
     end 
 
     def create 
-        # byebug
         occasion = Occasion.new(occasion_params)
         if occasion.save 
             render json: OccasionSerializer.new(occasion).to_serialized_json
