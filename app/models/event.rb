@@ -4,6 +4,7 @@ class Event < ApplicationRecord
 
   validates :name, :description, :duration, :cost, :location, presence: true 
 
+  scope :sort_by_cost, -> { order(cost: :desc)}
 
   def category_name=(name)
     category = Category.find_by(name: name)
@@ -22,4 +23,12 @@ class Event < ApplicationRecord
   def occasion_name
     occasion.name 
   end 
+
+  def self.sort(filtered_events, sort_params)
+    case sort_params
+      when 'alphabetical' then filtered_events.order(:name)
+      when 'cost' then filtered_events.sort_by_cost
+    end 
+  end 
+
 end
